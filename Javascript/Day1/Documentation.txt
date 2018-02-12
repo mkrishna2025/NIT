@@ -1,0 +1,170 @@
+--Start Day -1
+Syntax for creating a variable
+var variableName = defaultValue;
+
+var x = 10;
+var y; -> y is undefined
+
+Viewing values
+alert(x) -> in a popup
+console.log(x) -> prints value to console
+
+Syntax for creating a function
+// Approach 1
+function functionName(){
+}
+
+function welcome(){
+	console.log('Welcome to Demo');
+}
+
+// executing a function
+functionName();
+
+welcome() -> prints Welcome to Demo in console.
+
+function addition(x, y) {
+	var z = x + y;
+	console.log('result is ' + z);
+}
+
+function subtraction(x, y) {
+	console.log(' x value is ' + x);
+	console.log(' y value is ' + y);
+	var z = x - y;
+	console.log('result is ' + z);
+}
+subtraction(1, 2, 3) -> 
+1 will be copied to x, 
+2 will be copied to y 
+and 3 will be ignored.
+Additional Params are ignored.
+
+subtraction(1) ->
+x is 1
+y is undefined
+result is Nan -> Not a number
+Not passed in params considered undefined
+
+type -> Predefined function. It returns type of variable
+var x = 10;
+typeof(x) -> number
+var y = "Hello"
+typeof(y) -> string
+var z;
+typeof(z) -> undefined
+var a = true;
+typeof(a) -> boolean
+
+// Handling undefined
+function subtraction(x, y) {
+	x = x || 0;
+	y = y || 0;
+	console.log(' x value is ' + x);
+	console.log(' y value is ' + y);
+	var z = x - y;
+	console.log('result is ' + z);
+}
+
+// Approach 2 to create a function
+// syntax
+var functionName = function() {}
+
+var Multiplication = function(x, y){
+	x = x || 1;
+	y = y || 1;
+	var z = x * y;
+	console.log('result is ' + z);
+}
+
+// self executing function
+// syntax
+(function functionName(params){})();
+
+(function division(x, y){
+	x = x || 0;
+	y = y || 1;
+	var z = x / y;
+	console.log('result is ' + z);
+})();
+
+// passing values
+(function division(x, y){
+	x = x || 0;
+	y = y || 1;
+	var z = x / y;
+	console.log('result is ' + z);
+})(10, 2);
+
+var result = (function division(x, y){
+	x = x || 0;
+	y = y || 1;
+	var z = x / y;
+	console.log('result is ' + z);
+	return z;
+})(10, 2);
+
+-> result is 5
+
+function process(termiateInMiddle){
+	console.log('Started')
+	
+	if(termiateInMiddle) {
+		console.log('Terminated');
+		return;
+	}
+	
+	console.log('End');
+}
+
+== compares only value
+===  compares both value and type 
+
+1 == 1 -> true
+1 == "1" -> true
+1 === 1 -> true
+1 === "1" -> false
+
+parseInt("10") -> 10
+parseInt("10.8") -> 10 -> it just removes decimals and not rounding off
+parseFloat("10.8") -> 10.8
+
+var x = 10;
+x.toString() -> converts number to string
+
+new Date() -> gets current date
+
+// Object 
+// key value pair
+// key can be string or numeric but dont give spaces
+// value	-
+				Numeric
+				Boolean
+				String
+				function
+				Other Object -> Nested Object
+				
+var person = {
+	firstName: 'Arjun',
+	lastName: 'Krishna'
+}
+
+// Accessing a value
+person.firstName
+person['lastName']
+
+// updating/adding a value
+person.firstName = 'Deepak'
+person['city'] = 'Hyderabad'
+
+delete person.city -> deletes city key.
+
+	https://github.com/mkrishna2025
+	
+	
+Types
+	Number
+	String
+	Undefined
+	Boolean
+	Object
