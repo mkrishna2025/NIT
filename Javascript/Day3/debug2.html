@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+	function test(){
+		var Calculator = function(){
+
+			var printToConsole = function(result){
+				console.log('Result is ' + result);
+			}
+			
+			this.version = 2.0;
+			
+			this.addition = function(x, y) {
+				var z = x + y;
+				printToConsole(z);
+				return z;
+			};
+			this.subtraction = function(x, y) {
+				var z = x - y;
+				printToConsole(z);
+				return z;
+			}
+		}
+		
+		var ScientificCalculator = function(){
+			
+			this.areaOfTriangle = function() {
+			}
+			debugger;
+			Calculator.call(this);
+			
+			
+		}
+		debugger;
+		var s1 = new ScientificCalculator();
+
+	}
+	</script>
+</head>
+<body onload=test()>
+</body>
+</html>
