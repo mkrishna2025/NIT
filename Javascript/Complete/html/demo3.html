@@ -1,0 +1,29 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function startUp(){
+			debugger;
+			document.getElementById('root').innerHTML += 'Welcome to Dynamic HTML Demo. Please login';
+			document.getElementById('root').innerHTML += '<br /><br />';
+			
+			var newlabel = document.createElement("Label");
+			newlabel.innerHTML = "Email Id";
+			document.getElementById('root').appendChild(newlabel);
+			
+			var textBox = document.createElement("input");
+			textBox.setAttribute('type', 'text');
+			document.getElementById('root').appendChild(textBox);
+			document.getElementById('root').innerHTML += '<br /><br /><br />';
+			
+			var button = document.createElement("input");
+			button.setAttribute('type', 'submit');
+			button.setAttribute('value', 'Login');
+			document.getElementById('root').appendChild(button);
+		}
+	</script>
+</head>
+<body onload="startUp()">
+	<div id="root">
+	</div>
+</body>
+</html>

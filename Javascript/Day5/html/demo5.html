@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function startUp(){
+			debugger;
+			var container = Framework.getElement('root');
+			container.innerHTML += 'Welcome to Dynamic HTML Demo. Please login';
+			container.innerHTML += '<br /><br />';
+			container.appendChild(Framework.createLabel({text: 'Email Id' }));
+			container.appendChild(Framework.createTextBox());
+			container.innerHTML += '<br /><br />';
+			container.appendChild(Framework.createButton({text: 'Login' }));
+		}
+	</script>
+	<script type="text/javascript" src="TestFramework.js">
+	</script>
+</head>
+<body onload="startUp()">
+	<div id="root">
+	</div>
+</body>
+</html>
