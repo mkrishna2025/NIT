@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+	function test(){
+		var Calculator = function(){
+			var printToConsole = function(result){
+				console.log('Result is ' + result);
+			}
+			var returnItem = {
+				addition: function(x, y) {
+					debugger;
+					var z = x + y;
+					printToConsole(z);
+					return z;
+				},
+				subtraction: function(x, y) {
+					var z = x - y;
+					printToConsole(z);
+					return z;
+				}
+			}
+			
+			return returnItem;
+		}
+		var c1 = new Calculator();
+		debugger;
+		c1.addition(1,2);
+
+	}
+	</script>
+</head>
+<body onload=test()>
+</body>
+</html>

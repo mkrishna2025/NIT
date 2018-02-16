@@ -1,0 +1,28 @@
+<html>
+<head>
+<script>
+	function test(){
+		function addition(x, y, callback) {
+			console.log('started');
+			callback(x + y);
+			console.log('sucess');
+		}
+		
+		debugger;
+		addition(1, 2, function(result) {
+			debugger;
+			console.log('value of x + y is  ' + result); 
+		});
+		debugger;
+		addition(4, 5, function(result) {
+			debugger;
+			console.log('result of x + y is  ' + result); 
+		});
+		
+
+	}
+	</script>
+</head>
+<body onload=test()>
+</body>
+</html>
