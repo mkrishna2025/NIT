@@ -1,0 +1,21 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class TestComponent extends React.Component {
+            render() {
+                 return (
+                    <h1>{this.props.welcomeText}</h1>
+                );
+            }
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Demo 4'/>, document.getElementById('root'));
+    </script>
+</body>
+</html>

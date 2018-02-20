@@ -1,0 +1,58 @@
+<html>
+<header>
+	<meta charset="utf-8" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+	<div id="root"></div>
+	<script type="text/babel">
+        
+        // Approach 1
+        //ReactDOM.render(<h1>Welcome to Demo 1</h1>, document.getElementById('root'));
+
+        // Approach 2
+        //ReactDOM.render(React.createElement('div', {id: 'dynamicDiv'}, 'Welcome to Demo 2'), document.getElementById('root'));
+    
+        // Approach 3
+        /*function TestComponent(params) {
+            return (
+                <h1>Welcome to Demo 3</h1>
+            );
+        }
+        ReactDOM.render(<TestComponent />, document.getElementById('root'));*/
+
+        /*function TestComponent(params) {
+            return (
+                <h1>{params.welcomeText}</h1>
+            );
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Demo 4'/>, document.getElementById('root'));*/
+    
+        /*var TestComponent = React.createClass({
+            render: function(){
+                return (
+                    <h1>{this.props.welcomeText}</h1>
+                );
+            }
+        });
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Demo 5'/>, document.getElementById('root'));*/
+
+        /*class TestComponent extends React.Component {
+            render() {
+                 return (
+                    <h1>{this.props.welcomeText}</h1>
+                );
+            }
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Demo 6'/>, document.getElementById('root'));*/
+
+        const element = (
+            <h1>Welcome to Demo 7</h1>
+        );
+        ReactDOM.render(element, document.getElementById('root'));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<html>
+<header>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+</header>
+<body>
+	<div id="app"></div>
+	<script>
+		//document.getElementById('app').innerHTML = 'Hello World';
+
+		ReactDOM.render(React.createElement('div', {id:'DynamicDiv'}, 'React Demo 2'), document.getElementById('app'));
+
+		/*function demo(){
+			// React.createElement(elementType, elementProps (like id, style), HTML String);
+			return React.createElement('div', {id:'DynamicDiv'}, 'React Demo ');
+		}
+		ReactDOM.render( demo(), document.getElementById('app'));*/
+	</script>
+</body>
+</html>

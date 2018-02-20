@@ -1,0 +1,25 @@
+﻿<html>
+<header>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+</header>
+<body>
+	<div id="app"></div>
+	<script>
+	
+		/*var TestApp = React.createClass({
+				render: function(){
+					return React.createElement('div', {id:'DynamicDiv'}, 'React Sample');
+				}
+			});*/
+			
+		class TestApp extends React.Component {
+			render(){
+				return React.createElement('div', {id:'DynamicDiv'}, 'React Sample 2');
+			}
+		}
+		
+		ReactDOM.render(React.createElement(TestApp), document.getElementById('app'));
+	</script>
+</body>
+</html>
