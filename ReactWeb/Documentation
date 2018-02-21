@@ -1,6 +1,13 @@
+Babel will convert html syntax code(jsx) into react elements
 
 ReactDOM.render(React element to display, DOM element where we need to inject/replace)
 
 
 React.createElement(What is element type, element properties, display/welcome text)
 React.createElement('div', {id: 'dynamicDiv'}, 'Welcome to Demo 2')
+
+// approaches for creating function
+function addition(x,y) { return x + y; }
+var addition = function (x,y) { return x + y; }
+// ES6 standard
+var addition = (x,y) => { return x + y; }

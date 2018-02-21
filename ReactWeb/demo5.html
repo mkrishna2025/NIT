@@ -1,0 +1,41 @@
+<html>
+<header>`
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class TestComponent extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {
+					result: 10
+				};
+			}
+
+			buttonClick(){
+				alert('Button is Clicked');
+				var c = 20;
+				//this.state.result = c;
+				this.setState({ result: c});
+			}
+
+            render() {
+                 return (
+					<div>
+						<h1>{this.props.welcomeText}</h1>
+						 Value A : <input type="text"/>
+						 Value B : <input type="text" />
+						 <input type="submit" onClick={this.buttonClick.bind(this)} />
+						<h2>Result is {this.state.result}</h2>
+					</div>
+                );
+            }
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Demo 4'/>, document.getElementById('root'));
+    </script>
+</body>
+</html>
