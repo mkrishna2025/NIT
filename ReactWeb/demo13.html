@@ -1,0 +1,50 @@
+<html>
+<header>`
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+		const COURSES = ['React', 'React Native', 'Angular', 'Javascript', 'JQuery', 'Sencha'];
+        class TestComponent extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {
+					courses: COURSES,
+					filteredCourses: COURSES,
+					searchText: ''
+				}
+			}
+			searchBoxClick(){
+				var newCourses = [];
+				for(var course of this.state.courses){
+					if(course.indexOf(this.state.searchText) >= 0){
+						newCourses.push(course);
+					}
+				}
+				this.setState({ filteredCourses: newCourses });
+			}
+			resetBoxClick(){
+				this.setState({filteredCourses: this.state.courses, searchText: ''});
+			}
+			
+			render() {
+				 return (
+					<div>
+						{this.props.welcomeText}
+						<br/>
+						<input type="text" value={this.state.searchText} onChange={event => this.setState( {searchText: event.target.value}) }/> 
+						<input type="button" value="Search" onClick={this.searchBoxClick.bind(this)} />
+						<input type="button" value="Reset" onClick={this.resetBoxClick.bind(this)} />
+						{this.state.filteredCourses.map(item => <li>{item}</li>)}
+					</div>
+				);
+            }
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Courses'/>, document.getElementById('root'));
+    </script>
+</body>
+</html>

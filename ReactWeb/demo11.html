@@ -1,0 +1,97 @@
+<html>
+<header>`
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<link rel="stylesheet" href="demo9.css" />
+</header>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class TestComponent extends React.Component {
+			constructor(props) {
+				super(props);
+				var states = [
+						{ value: '1', name: 'Delhi', country: 1 },
+						{ value: '2', name: 'Telangana', country: 1 },
+						{ value: '3', name: 'New Jersey', country: 2 },
+						{ value: '4', name: 'Washington', country: 2 },
+						{ value: '5', name: 'Islamabad', country: 3 },
+						{ value: '6', name: 'Andhra Pradesh', country: 1 }
+					];
+				this.state = {
+					firstName: '',
+					lastName: '',
+					country: '',
+					state: '',
+					countries: [
+						{ value: '1', name: 'India' },
+						{ value: '2', name: 'Usa' },
+						{ value: '3', name: 'Pakistan' },
+						{ value: '4', name: 'United Kindom' }
+					],
+					states:states,
+					filteredStates: states
+				}
+			}
+			buttonClick(){
+				//debugger;
+				alert(JSON.stringify(this.state))
+			}
+			renderItem(item){
+				return <option value={item.value}>{item.name}</option>;
+			}
+			onCountryChange(event){
+				debugger;
+				var country = event.target.value;
+				var newStates = [];
+				for(var state of this.state.states){
+					if(state.country == parseInt(country)){
+						newStates.push(state);
+					}
+				}
+				this.state.country = country;
+				this.setState({ filteredStates: newStates });
+			}
+			
+			getCountries(){
+				/*return <select id="country" name="country"  onChange={(event) => this.state.country = event.target.value} >
+									{this.state.countries.map(item => <option value={item.value}>{item.name}</option> )}
+							</select>;*/
+				return <select id="country" name="country"  onChange={this.onCountryChange.bind(this)} >
+									{this.state.countries.map(this.renderItem)}
+							</select>;
+			}
+			
+			getStates(){
+				return <select id="state" name="state"  onChange={(event) => this.state.state = event.target.value} >
+									{this.state.filteredStates.map(item => <option value={item.value}>{item.name}</option> )}
+							</select>;
+			}
+            
+			render() {
+				 var countries = this.getCountries();
+				 var states = this.getStates();
+                 return (
+					<div>
+						<h3>Using CSS to style an HTML Form</h3>
+						<div>
+						  <label>First Name</label>
+							<input type="text" id="fname" name="firstname" placeholder="Your name.." onChange={(event) => this.state.firstName = event.target.value}/>
+							<label>Last Name</label>
+							<input type="text" id="lname" name="lastname" placeholder="Your last name.." onChange={(event) => this.state.lastName = event.target.value}/>
+							<label>Country</label>
+								{countries}
+							<label>State</label>
+								{states}
+							<input type="submit" value="Submit" onClick={this.buttonClick.bind(this)} />
+						</div>
+					</div>
+                );
+            }
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Demo 4'/>, document.getElementById('root'));
+    </script>
+</body>
+</html>

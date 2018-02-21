@@ -1,0 +1,30 @@
+<html>
+<header>`
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class TestComponent extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {
+					courses: ['React', 'React Native', 'Angular', 'Javascript', 'JQuery']
+				}
+			}
+			render() {
+				 return (
+					<div>
+						{this.props.welcomeText}
+						{this.state.courses.map(item => <li>{item}</li>)}
+					</div>
+				);
+            }
+        }
+        ReactDOM.render(<TestComponent welcomeText='Welcome to Courses'/>, document.getElementById('root'));
+    </script>
+</body>
+</html>
