@@ -1,0 +1,101 @@
+<html>
+<header>`
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+	<div id="app"></div>
+	<script type="text/babel">
+		
+		class Student extends React.Component {
+			render(){
+				var item = this.props.value;
+				return <tr>
+							<td>{item.id}</td>
+							<td>{item.name}</td>
+							<td>{item.city}</td>
+							<td>{item.age}</td>
+						</tr>;
+			}
+		}
+		
+		class HTMLTable extends React.Component {
+			render() {
+				debugger;
+				var config = this.props.config;
+				var records = this.props.data;
+				var renderFunction = this.props.renderItem;
+				return <table style={{border:"1px solid"}}>
+					{config.map(item => <th> <td>{item.header}</td></th> )}
+					<tbody>
+						{records.map(renderFunction)}
+					</tbody>
+				</table>;
+			}
+		}
+		
+		class RichHTMLTable extends React.Component {
+			render(){
+				debugger;
+				var item = <div>
+							{this.props.config.map(item => {
+								debugger;
+								if(item.enableSearch) {
+									return <div>Search {item.header}<input type='text' /><br/></div>;
+								}
+								})
+							}
+							<input type="button" value="Search" />
+							<HTMLTable 
+								config={this.props.config} 
+								data={this.props.data} 
+								renderItem={this.props.renderItem} />
+							</div>
+				return item;
+			}
+		}
+	
+		class Demo extends React.Component {
+			constructor(props){
+				super(props);
+				this.state = {
+					students: [
+						{id: 1, name: 'John', city: 'Hyderabad', age: 20},
+						{id: 2, name: 'Venkat', city: 'Delhi', age: 20},
+						{id: 3, name: 'Divya', city: 'Vijayawada', age: 23},
+						{id: 4, name: 'Jhansi', city: 'Hyderabad', age: 20}
+					],
+					config: [
+						{ column: 'id', header: 'ID' },
+						{ column: 'name', header: 'Name', enableSearch: true },
+						{ column: 'city', header: 'City' },
+						{ column: 'age', header: 'Age' }
+					]
+				};
+			}
+			
+			renderItem(item){
+				debugger;
+				return <Student value={item} />;
+			}
+			
+			render(){
+				return (
+					<div>
+						<h1> Welcome to Students. enableSearch is added to config </h1>
+						<RichHTMLTable 
+							config={this.state.config} 
+							data={this.state.students}
+							renderItem = {this.renderItem.bind(this)}
+						/>
+					</div>
+				);
+			}
+		}
+	
+		ReactDOM.render(<Demo />, document.getElementById('app'));
+	</script>
+</body>
+</html>

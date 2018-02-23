@@ -1,0 +1,94 @@
+<html>
+<header>`
+    <meta charset="utf-8" />
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="babel.min.js"></script>
+</header>
+<body>
+	<div id="app"></div>
+	<script type="text/babel">
+		class Header extends React.Component {
+			constructor(props){
+				super(props);
+			}
+			render(){
+				return <h1>Welcome {this.props.userName} for the Demo. </h1>;
+			}
+		}
+		
+		class Footer extends React.Component {
+			render(){
+				return <h3>Licensed to NIT@{this.props.year}</h3>;
+			}
+		}
+		
+		class MasterPage extends React.Component {
+			render(){
+				return (<div>
+					<Header userName={this.props.user}/>
+					{this.props.children}
+					<Footer year={2007}/>
+				</div>);
+			}
+		}
+		
+		class CenterPanel extends React.Component {
+			render(){
+				return <h2>Demo for this.props.children. Place Holder for Dynamic Data.</h2>;
+			}
+		}
+		
+		class CenterPanel2 extends React.Component {
+			render(){
+				return <h2>Place Holder Second Panel</h2>;
+			}
+		}
+		
+		class CenterPanel3 extends React.Component {
+			render(){
+				return <h2>Place Holder Third Panel</h2>;
+			}
+		}
+		
+		class LoginScreen extends React.Component {
+			onLogin(){
+				localStorage.isAuthenticated = true;
+				location.reload();
+			}
+			render(){
+				return <div>
+						<h1>Please Login</h1>
+						<input type="button" value="Login" onClick={this.onLogin.bind(this)} />
+					   </div>;
+			}
+		}
+		
+		class Demo extends React.Component {
+			constructor(props){
+				super(props);
+			}
+			onLogout(){
+				localStorage.isAuthenticated = false;
+				location.reload();
+			}
+			render(){
+				debugger;
+				if(localStorage.isAuthenticated == 'true'){
+					return (
+						<MasterPage user={this.props.user}>
+							<CenterPanel/>
+							<CenterPanel2 />
+							<input type="button" value="Logout" onClick={this.onLogout.bind(this)} />
+						</MasterPage>
+					);
+				} else {
+					return <LoginScreen />;
+				}
+			}
+		}
+	
+		ReactDOM.render(<Demo/>, document.getElementById('app'));
+	</script>
+</body>
+</html>
