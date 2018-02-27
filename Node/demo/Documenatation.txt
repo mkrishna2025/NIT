@@ -1,0 +1,2 @@
+npm init -> creates a project
+node filename.js -> to execute that file.

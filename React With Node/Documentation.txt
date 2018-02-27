@@ -1,0 +1,16 @@
+installing global package
+npm install -g create-react-app
+
+project generation
+create-react-app projectname
+or
+npx create-react-app projectname
+
+starting project
+cd projectname
+
+npm run start -> starts project in 3000 port
+npm run build -> generates build folder which is bundled
+
+
+npm install -> to install modules
