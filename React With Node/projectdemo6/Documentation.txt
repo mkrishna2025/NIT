@@ -1,0 +1,44 @@
+class MasterPage 
+{
+    render() {
+        return 
+        <div>
+            <Header/>
+            {this.props.children}
+            <Footer/>
+        </div>;
+    }
+}
+
+class Page2 {
+
+}
+
+class Page1 {
+    render(){
+        <MasterPage>
+            <Page2/>
+        </MasterPage>
+    }
+}
+
+<Header></Header>
+<Header />
+
+react-router-dom
+react-router-native
+
+BrowserRouter - Create an instance of BrowserRouter and pass Application as children
+HashRouter
+
+/main
+/main/1
+/main/id/1
+/main/aboutUs
+
+/a -> exact
+/a/test
+/a/test2
+/a/test3 -> exact
+/a/test3/Page1
+/a/test3/Page2

@@ -1,5 +1,5 @@
 .title {
-  width: 96%;
+  width: 100%;
   background-color: white;
   color: rebeccapurple;
   padding: 5px 33px 10px 23px;
@@ -9,7 +9,7 @@
 }
 
 .header {
-  width: 98%;
+  width: 100%;
   height: auto;
   background-color: white;
   margin: 10px;

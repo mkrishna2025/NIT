@@ -1,0 +1,229 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.main {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.parent {
+  background-color: #b5dbde;
+  width: 100%;
+  float: left;
+}
+
+img {
+  width: 100PX;
+  float: left;
+  margin: 0 147px 0 0;
+}
+
+ul>li{
+  display: inline;
+  margin: 0 20px;
+  float: left;
+  padding: 6px 0 0 0;
+  text-decoration: 'none';
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: blue;
+}
+
+.mySlides {
+  height: 450px;
+  width: 100%;
+}
+
+.w3-content {
+  max-width: 938px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.slides {
+  width: 96%;
+  background-color: white;
+  margin: 10px;
+  padding: 15px;
+  font-size: 19px;
+  float: left;
+}
+
+h3{color: blue;}
+
+.footer {
+  width: 96%;
+  background-color: white;
+  margin: 10px;
+  padding:15px;
+  font-size: 19px;
+  float: left;
+  color: rebeccapurple;
+}
+
+.Home {
+  width: 96%;
+  height: auto;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+
+.group {
+  color: blue;
+}
+
+.Courses {
+  width: 96%;
+  height: auto;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+.Placements{
+  width: 96%;
+  height: auto;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+.contactus {
+  width: 96%;
+  height: auto;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+.Login {
+  width: 96%;
+  background-color: white;
+  margin: 10px;
+  padding:15px;
+  font-size: 19px;
+  float: left;
+  color: rebeccapurple;
+  }
+
+.totle-input {
+    padding:10px 10px 10px 40px;
+    background-color: #8ce1e8;
+    border: 1px ridge gray;
+    border-radius: 10px;
+    margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  float: none;
+  }
+
+.name input {
+    padding: 10px;
+    width: 94.3%;
+    margin-bottom: 20px;
+    border: 1px ridge gray;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+.email input {
+    padding: 10px;
+    width: 94.3%;
+    margin-bottom: 10px;
+    border: 1px ridge gray;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+.PhoneNumber input {
+    padding: 10px;
+    width: 94.3%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px ridge gray;
+    border-radius: 10px;
+  }
+
+  .tel-input {
+    padding: 10px;
+    width: 294.3%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.password input {
+    padding: 10px;
+    width: 94.3%;
+    border: 1px ridge gray;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+.button {
+    float: right;
+    margin: 50px 0 10px 0 ;
+    border:1px solid #ccc;
+    background: #6fdce4;
+    position: relative;
+    left: -23px;
+    color:#fff;
+    padding: 5px 5px;
+    text-decoration: none;
+    border: 1px ridge gray;
+    border-radius: 10px;
+ }
+
+ table {
+    border-collapse: collapse;
+ }
+
+ table, td, th {
+    border: 1px solid black;
+    padding: 10px 0;
+    margin-top:  25px;
+    text-align: center;
+  }

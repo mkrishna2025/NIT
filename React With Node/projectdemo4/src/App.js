@@ -20,13 +20,14 @@ class Page3 extends Component{
   render() { return <div> Welcome to Page 3</div>; }
 }
 
+
+
 class App extends Component {
   render() {
     return (
       <div>
         <Route exact path="/" component={Login} />
         <Route path="/home" component={Home} />
-        <Route path="/aboutus" component={AboutUs} />
       </div>
     );
   }
