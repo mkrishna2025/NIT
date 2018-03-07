@@ -1,0 +1,20 @@
+.title {
+  width: 96%;
+  background-color: white;
+  color: rebeccapurple;
+  padding: 5px 33px 10px 23px;
+  margin: 10px;
+  float: left;
+  height: auto;
+}
+
+.header {
+  width: 98%;
+  height: auto;
+  background-color: white;
+  margin: 10px;
+  padding-bottom: 30px;
+  font-size: 16px;
+  float: left;
+  color: rebeccapurple;
+}
