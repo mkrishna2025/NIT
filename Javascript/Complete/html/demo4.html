@@ -16,6 +16,11 @@
 				element.setAttribute('type', 'text');
 				return element;
 			},
+			createNumberBox: function(options){
+				var element = document.createElement("input");
+				element.setAttribute('type', 'number');
+				return element;
+			},
 			createButton: function(options){
 				var element = document.createElement("input");
 				element.setAttribute('type', 'submit');
@@ -25,7 +30,7 @@
 		};
 		function startUp(){
 			debugger;
-			var container = Framework.getElement('root');
+			var container = Framework.getElement('app');
 			container.innerHTML += 'Welcome to Dynamic HTML Demo. Please login';
 			container.innerHTML += '<br /><br />';
 			container.appendChild(Framework.createLabel({text: 'Email Id' }));
@@ -36,7 +41,7 @@
 	</script>
 </head>
 <body onload="startUp()">
-	<div id="root">
+	<div id="app">
 	</div>
 </body>
 </html>
