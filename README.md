@@ -11,3 +11,5 @@
 - Awesome React Components (https://github.com/brillout/awesome-react-components)
 
 - Community React Components (https://reactjs.org/community/ui-components.html)
+
+- Sharing Details (https://docs.google.com/forms/d/17k-iRe7Vf1_mqHYL3N36vMEVJQ3Nk_doUD6Cfh34RyM/edit?usp=sharing)
