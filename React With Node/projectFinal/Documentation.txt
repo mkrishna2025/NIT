@@ -1,0 +1,72 @@
+class MasterPage 
+{
+    render() {
+        return 
+        <div>
+            <Header/>
+            {this.props.children}
+            <Footer/>
+        </div>;
+    }
+}
+
+class Page2 {
+
+}
+
+class Page1 {
+    render(){
+        <MasterPage>
+            <Page2/>
+        </MasterPage>
+    }
+}
+
+<Header></Header>
+<Header />
+
+react-router-dom
+react-router-native
+
+BrowserRouter - Create an instance of BrowserRouter and pass Application as children
+HashRouter
+
+/main
+/main/1
+/main/id/1
+/main/aboutUs
+
+/a -> exact
+/a/test
+/a/test2
+/a/test3 -> exact
+/a/test3/Page1
+/a/test3/Page2
+
+Stateful
+Stateless
+
+<Test a=1 b=2 c=3>
+
+const Test = (props) => (
+    <Page {...props} />
+)
+here a,b,c are passed to instance of Test
+
+const Test = ({b: valueA, ...rest}) => (
+    <Page b={valueA} {...rest} />
+)
+here a is passed manually and b,c are passed from rest to instance of Test
+
+
+<li><Link to={"/home"} activeStyle={{color:"blue"}}>Home</Link></li>
+                    <li><Link to={"/home/aboutus"} activeStyle={{color:"blue"}}>Aboutus</Link></li>
+                    <li><Link to={"/home/topics"} activeStyle={{color:"blue"}}>Topics</Link></li>
+                    <li><Link to={"/home/queries"} activeStyle={{color:"blue"}}>Queries</Link></li>
+                    <li><Link to={"/home/contactus"} activeStyle={{color:"blue"}}>contactus</Link></li>
+                    <li><Link to={"/home/attendees"} activeStyle={{color:"blue"}}>Attendees</Link></li>
+                    <li><Link to={"/home/login"} activeStyle={{color:"blue"}}>Login</Link></li>
+                    <li><Link to={"/home/Signup"} activeStyle={{color:"blue"}}>Signup</Link></li>
+                    <li><Link to={"/home/Location"} activeStyle={{color:"blue"}}>Location</Link></li>
+                    <li><Link to={"/home/MultipleMarker"} activeStyle={{color:"blue"}}>MultipleMarker</Link></li>
+                    <li><Link to={"/home/GoogleMap"} activeStyle={{color:"blue"}}>GoogleMap</Link></li>
